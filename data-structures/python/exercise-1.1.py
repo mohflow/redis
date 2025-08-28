@@ -15,7 +15,7 @@ replica_r = redis.Redis(host=REPLICA_HOST, port=REPLICA_PORT, decode_responses=T
 # --- Step 1: Insert values 1-100 into source-db ---
 for i in range(1, 101):
     key = f"num:{i}"
-    source_r.set(key, i)
+    source_r.set(key, i*2)
   
 print("Inserted values 1-100 into source-db.")
 
