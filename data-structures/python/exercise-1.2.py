@@ -13,7 +13,7 @@ source_r = redis.Redis(host=SOURCE_HOST, port=SOURCE_PORT, decode_responses=True
 replica_r = redis.Redis(host=REPLICA_HOST, port=REPLICA_PORT, decode_responses=True)
 
 # --- Step 1: Insert values 1-100 into source-db with lists ---
-source_R.delete("numbers")
+source_r.delete("numbers")
 for i in range(1, 101):
     source_r.rpush("numbers", i)
   
