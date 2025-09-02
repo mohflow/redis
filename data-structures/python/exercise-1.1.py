@@ -8,7 +8,7 @@ REPLICA_HOST = "redis-13592.re-cluster1.ps-redislabs.org"
 REPLICA_PORT = 13592
 
 # Connect to source Redis
-source_r = redis.Redis(host=SOURCE_HOST, port=SOURCE_PORT, decode_responses=True)
+source_r = redis.Redis(host=SOURCE_HOST, port=SOURCE_PORT, username="abbas-admin", password="Ayesha@1", decode_responses=True)
 # Connect to replica Redis
 replica_r = redis.Redis(host=REPLICA_HOST, port=REPLICA_PORT, decode_responses=True)
 
