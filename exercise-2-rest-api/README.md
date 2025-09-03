@@ -95,23 +95,6 @@ python3 delete_db.py
 
 ---
 
-## Example Output
-
-```
-Database created successfully: db-12345
-User created: John Doe, Role: db_viewer, Email: john.doe@example.com
-User created: Mike Smith, Role: db_member, Email: mike.smith@example.com
-User created: Cary Johnson, Role: admin, Email: cary.johnson@example.com
-
-List of users:
-1. John Doe | db_viewer | john.doe@example.com
-2. Mike Smith | db_member | mike.smith@example.com
-3. Cary Johnson | admin | cary.johnson@example.com
-
-Database deleted successfully: db-12345
-```
-
----
 
 ## Notes
 
