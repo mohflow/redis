@@ -6,11 +6,10 @@ Reference: [redis-vl semantic router guide](https://github.com/redis/redis-vl-py
 
 ---
 
-## 🚀 Prerequisites
+## 🚀 Prerequisites (to run the program locally on [IDE](https://code-dot-rl-s-tc-mam.labs.ps-redis.com/) terminal)
 
 * Python 3.8+
 * A Redis deployment with the following modules enabled:
-
   * **RediSearch**
   * **ReJSON**
 * Access credentials to your Redis cluster
@@ -19,7 +18,7 @@ Reference: [redis-vl semantic router guide](https://github.com/redis/redis-vl-py
 
 ## ⚙️ Setup
 
-1. Install dependencies:
+1. Login to IDE server and Install dependencies:
 
    ```bash
    pip install redis redisvl
@@ -43,25 +42,27 @@ Reference: [redis-vl semantic router guide](https://github.com/redis/redis-vl-py
    ```bash
    rladmin status modules
    ```
-3. Create the Redis database with required modules like Redis Search, ReJSON:
+3. git clone https://github.com/mohflow/redis.git
+
+4. Create the Redis database with required modules like Redis Search, ReJSON:
 
    ```bash
    python3 create_db.py
    ```
 
-4. Initialize the semantic router and persist routes to Redis:
+5. Initialize the semantic router and persist routes to Redis:
 
    ```bash
    python3 routes_setup.py
    ```
 
-5. Verify the router index exists in Redis:
+6. Verify the router index exists in Redis:
 
    ```bash
    rvl index info -i topic_router --url redis://redis-15000.re-cluster1.ps-redislabs.org:15000
    ```
 
-6. (Optional) Inspect the keys and vectors using [RedisInsight](https://redis.io/insight/).
+7. (Optional) Inspect the keys and vectors using [RedisInsight](https://insight2-dot-rl-s-tc-mam.labs.ps-redis.com/).
 
 ---
 
