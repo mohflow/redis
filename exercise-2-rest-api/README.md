@@ -1,4 +1,4 @@
-# Redis REST API Automation Script
+# Redis REST API Script
 
 This repository contains a script that interacts with Redis using the REST API to perform various operations. The script includes functionalities such as creating a new database, adding users with specific roles, listing and displaying users, and deleting the created database.
 
