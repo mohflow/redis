@@ -8,7 +8,7 @@ This repository contains a series of Redis exercises designed to help you learn 
    Learn how to create a Redis database from Redis Enterprise cluster UI and insert values from 1 to 100. This exercise also demonstrates how to read the values in reverse order.  
    [View Instructions](https://github.com/mohflow/redis/blob/main/exercise-1-redis-ds/README.md)
 
-   The load node has the memtier_benchmark command at /tmp/memtier_benchmark.txt
+   The load node has the memtier_benchmark command at /tmp/memtier_benchmark.txt and output at /tmp/memtier_benchmark.out
    ```bash
    memtier_benchmark -s  redis-17890.re-cluster1.ps-redislabs.org -p 17890 --threads=4 --clients=50 --requests 10000 --data-size 128 --ratio=1:0
    ```
