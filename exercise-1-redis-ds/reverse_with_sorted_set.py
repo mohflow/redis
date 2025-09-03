@@ -21,7 +21,7 @@ zset_key = 'numbers_zset'
 source_r.delete(zset_key)
 
 for i in range(1, 101):
-    source_r.zadd(zset_key, {str(i): i})
+    source_r.zadd(zset_key, {i : i})
 
 values = replica_r.zrevrange(zset_key, 0, -1)
 print("Reverse order from replica-db:")

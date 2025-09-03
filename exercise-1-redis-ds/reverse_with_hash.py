@@ -28,4 +28,3 @@ values = replica_r.hmget(hash_key, fields)
 print("Reverse order from replica-db:")
 for field, value in zip(fields, values):
     print(f'{field}: {value}', end=' ')
-    print("\n")
