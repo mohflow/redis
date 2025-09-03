@@ -7,7 +7,7 @@ import json
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # === Load config ===
-with open("config.json", "r") as f:
+with open("/home/coder/redis/exercise-2-rest-api/config.json", "r") as f:
     config = json.load(f)
 
 REST_URL = config["rest_url"]
@@ -47,4 +47,21 @@ def delete_database(db_name):
 
 # === Main ===
 if __name__ == "__main__":
-    delete_database(DB_NAME)
+    # Prompt user for database name and ensure it's not empty
+    while True:
+        db_name = input("Enter the name of the database you want to delete: ").strip()
+        if db_name:
+            break
+        print("Database name cannot be empty. Please enter a valid name.")
+
+    # Confirm deletion
+    while True:
+        confirm = input(f"Are you sure you want to delete the database '{db_name}'? (yes/no): ").strip().lower()
+        if confirm in ("yes", "no"):
+            break
+        print("Invalid input. Please type 'yes' or 'no'.")
+
+    if confirm == "yes":
+        delete_database(db_name)
+    else:
+        print("Database deletion cancelled.")

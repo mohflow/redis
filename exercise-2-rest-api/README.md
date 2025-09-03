@@ -1,13 +1,120 @@
-# redis
-Exercise 2: Working with Redis REST API
+# Redis REST API Automation Script
 
-REST API documentation for Redis can be found at here
-REST API Endpoint is https://re-cluster1.ps-redislabs.org:9443. Please use the IP address if the host name isn't working.
-Write a small script/program using a language of your choice (e.g. Java, Python, Ruby, Go, Scala, C#, or JavaScript) to complete the following:
-Create a New Database: Utilize the Database API to create a new database without using any modules.
-Create Three New Users: Utilize the Users API to add three new users to the system with the following details:
-a. Email: john.doe@example.com, Name: John Doe, Role: db_viewer
-b. Email: mike.smith@example.com, Name: Mike Smith, Role: db_member
-c. Email: cary.johnson@example.com, Name: Cary Johnson, Role: admin
-List and Display Users: Utilize the Users API to fetch and display all users in the specified format (name, role, and email).
-Delete the Created Database: Database API to delete the previously created database.
+This repository contains a script that interacts with Redis using the REST API to perform various operations. The script includes functionalities such as creating a new database, adding users with specific roles, listing and displaying users, and deleting the created database.
+
+---
+
+## Prerequisites
+
+* Redis REST API endpoint: `https://re-cluster1.ps-redislabs.org:9443` (Use IP address if the hostname isn't resolving)
+* REST API credentials (username and password)
+* Python 3.x installed (or your preferred language runtime)
+* Internet connectivity to access the Redis REST API
+
+---
+
+## REST API Documentation
+
+Full Redis REST API documentation can be found [here](https://docs.redislabs.com/latest/rs/references/rest-api/).
+
+---
+
+## Script Features
+
+The script performs the following steps:
+
+1. **Create Database**
+
+   * Uses the Redis Database API to create a new database.
+   * Does not use any external modules; utilizes standard libraries only (e.g., `requests` in Python).
+
+2. **Create Users**
+
+   * Adds three users to the newly created database:
+
+     | Name         | Email                                                       | Role       |
+     | ------------ | ----------------------------------------------------------- | ---------- |
+     | John Doe     | [john.doe@example.com](mailto:john.doe@example.com)         | db\_viewer |
+     | Mike Smith   | [mike.smith@example.com](mailto:mike.smith@example.com)     | db\_member |
+     | Cary Johnson | [cary.johnson@example.com](mailto:cary.johnson@example.com) | admin      |
+
+3. **List and Display Users**
+
+   * Fetches all users using the Users API.
+   * Displays the users in a readable format: **Name | Role | Email**.
+
+4. **Delete Database**
+
+   * Deletes the previously created database using the Database API.
+
+---
+
+## Usage
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/mohflow/redis.git
+cd redis/exercise-2-rest-api
+```
+
+2. Update configuration (if required):
+
+```json
+{
+    "rest_url": "https://re-cluster1.ps-redislabs.org:9443",
+    "username": "<your-username>",
+    "password": "<your-password>"
+}
+```
+
+3. Create database:
+
+```bash
+python3 create_db.py
+```
+
+4. Create Users which checks if roles exists , if not creates the roles before creating the users:
+
+```bash
+python3 create_users.py
+```
+5. Display users
+
+```bash
+python3 list_users.py
+```
+
+6. Delete the database created
+
+```bash
+python3 delete_db.py
+```
+
+7. Check the console output to verify database creation, user creation, and user listing.
+
+---
+
+## Example Output
+
+```
+Database created successfully: db-12345
+User created: John Doe, Role: db_viewer, Email: john.doe@example.com
+User created: Mike Smith, Role: db_member, Email: mike.smith@example.com
+User created: Cary Johnson, Role: admin, Email: cary.johnson@example.com
+
+List of users:
+1. John Doe | db_viewer | john.doe@example.com
+2. Mike Smith | db_member | mike.smith@example.com
+3. Cary Johnson | admin | cary.johnson@example.com
+
+Database deleted successfully: db-12345
+```
+
+---
+
+## Notes
+
+* Ensure the REST API endpoint is reachable and credentials are correct.
+* Use IP address if DNS resolution for the host fails.
+* The script can be adapted to other languages such as Java, Go, or JavaScript by replacing HTTP request logic accordingly.

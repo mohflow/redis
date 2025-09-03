@@ -4,7 +4,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 import json
 
 # === Load config ===
-with open("config.json", "r") as f:
+with open("/home/coder/redis/exercise-2-rest-api/config.json", "r") as f:
     config = json.load(f)
 
 REST_URL = config["rest_url"]
