@@ -7,7 +7,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # === Load Config ===
-with open("config.json", "r") as f:
+with open("/home/coder/redis/semantic-routing-bonus-exercise/config.json", "r") as f:
     config = json.load(f)
 
 REST_URL = config["rest_url"]

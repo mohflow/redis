@@ -1,0 +1,9 @@
+{
+  "rest_url": "https://re-cluster1.ps-redislabs.org:9443",
+  "username": "admin@rl.org",
+  "password": "wPDMWL0",
+  "source_db": "redis-17890.re-cluster1.ps-redislabs.org",
+  "source_port": "17890",
+  "replica_db": "redis-12175.re-cluster1.ps-redislabs.org",
+  "replica_port": "12175"
+}
