@@ -1,0 +1,20 @@
+[
+    {
+        "email": "john.doe@example.com",
+        "name": "John Doe",
+        "role": "db_viewer",
+        "password": "StrongPass123!"
+    },
+    {
+        "email": "mike.smith@example.com",
+        "name": "Mike Smith",
+        "role": "db_member",
+        "password": "StrongPass123!"
+    },
+    {
+        "email": "cary.johnson@example.com",
+        "name": "Cary Johnson",
+        "role": "admin",
+        "password": "StrongPass123!"
+    }
+]

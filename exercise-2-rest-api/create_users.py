@@ -20,28 +20,8 @@ PASSWORD = config["password"]
 create_roles.ensure_roles_exist()
 
 # ========= CREATE USERS =========
-users = [
-    {
-        "email": "john.doe@example.com",
-        "name": "John Doe",
-        "role": "db_viewer",
-        "password": "StrongPass123!"
-    },
-    {
-        "email": "mike.smith@example.com",
-        "name": "Mike Smith",
-        "role": "db_member",
-        "password": "StrongPass123!"
-    },
-    {
-        "email": "cary.johnson@example.com",
-        "name": "Cary Johnson",
-        "role": "admin",
-        "password": "StrongPass123!"
-    }
-]
-
-
+with open("/home/coder/redis/exercise-2-rest-api/users.json", "r") as f:
+    users = json.load(f)
 
 for user in users:
     resp = requests.post(
