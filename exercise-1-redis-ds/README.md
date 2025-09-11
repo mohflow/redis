@@ -136,12 +136,12 @@ Reverse read: ZREVRANGE → "100", "99", ..., "1"
 For **reverse-order retrieval of sequential numbers**:
 
 * **Strings**: Works, but inefficient due to multiple keys.
-* **List**: Simple and efficient for small sequences.
+* **List**: **Simple and efficient for insertion and reversal**
 * **Hash**: Works but requires extra effort to reverse; not ideal.
-* **Sorted Set**: **Best choice** because it automatically maintains order and allows **trivial reverse retrieval** using `ZREVRANGE`.
+* **Sorted Set**: **Good choice** as it automatically maintains order and allows **trivial reverse retrieval** using `ZREVRANGE`. But a Overkill with memory if the only usage is to reverse the numbers.
 
 **Recommendation:**
 
-> Use **Sorted Set (ZSet)** for reverse-order retrieval scenarios where you want automatic ordering, fast access, and scalable performance. For small, sequential data, a **List** is also acceptable if simplicity is preferred.
+> Use **List** for simplicity.
 
 ---
